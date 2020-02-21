@@ -1,0 +1,72 @@
+Announcement:
+  fields:
+    - id
+    - entity_id
+    - name
+    - announcement_date
+
+Area:
+  fields:
+    - id
+    - entity_id
+    - name
+    - discipline -> Discipline
+
+SpecializationArea
+  fields:
+    - id
+    - name
+    - area -> Area
+
+Discipline
+  fields:
+    - id
+    - name
+
+Researcher:
+  fields:
+    - id
+    - birthdate
+    - id_gender_entity
+    - gender
+    - place_of_birth -> location
+    - main_residence -> location
+    - age
+    - announcements -> Anonouncement
+    - specialization_area -> SpecializationArea
+    - education -> ResearcherEducation
+    - job_level -> JobLevel
+
+Location:
+  fields:
+    - id
+    - town
+    - state
+    - country
+    - dane_code
+    - region
+    - location_entity_id(optional)
+
+ResearcherEducation:
+  fiels:
+    - Researcher_id
+    - Education_id
+    - level
+
+ResearcherJobLevel:
+  fields:
+    - Researcher_id
+    - job_level_id
+    - level
+
+Education:
+  fields:
+    - id
+    - level_entity_id
+    - name
+
+JobLevel:
+  fields:
+    - id
+    - class_id_entity
+    - Name

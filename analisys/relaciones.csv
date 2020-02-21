@@ -1,0 +1,29 @@
+Entity name, model, local name
+ID_CONVOCATORIA, Announcement, Entity_id
+NME_CONVOCATORIA, Announcement, Name
+ANO_CONVO, Announcement, Anonouncement_date
+ID_AREA_CON_PR, Area, Entity_id
+NME_ESP_AREA_PR, SpecializationArea, Name
+NME_AREA_PR, Area, Name
+NME_GRAN_AREA_PR, Discipline, Name
+FNACIMIENTO_PR, Researcher, Birthdate
+ID_GENERO_PR, Researcher, Id_gender_entity
+NME_GENERO_PR, Researcher, Gender
+NME_MUNICIPIO_NAC_PR, relation with Location, Town
+NME_DEPARTAMENTO_NAC_PR, relation with Location, State
+NME_PAIS_NAC_PR, relation with Location, Country
+NME_REGION_NAC_PR, relation with Location, Region
+COD_DANE_NAC_PR, relation with Location, Dane_code
+ID_UBIC_RES_PR, relation with Location, Location_entity_id
+NME_MUNICIPIO_RES_PR, relation with Location, Town
+NME_DEPARTAMENTO_RES_PR, relation with Location, State
+NME_PAIS_RES_PR, relation with Location, Country
+NME_REGION_RES_PR, relation with Location, Region
+COD_DANE_RES_PR, relation with Location, Dane_code
+ID_NIV_FORMACION_PR, Education, Level_entity_id
+NME_NIV_FORMACION_PR, Education, Name
+NRO_ORDEN_FORM_PR, ResearcherEducation, level
+ID_CLAS_PR, JobLevel, class_id_entity
+NME_CLASIFICACION_PR, JobLevel, name
+ORDEN_CLAS_PR, ResearcherJobLevel, level
+EDAD_ANOS_PR, Researcher, Age
