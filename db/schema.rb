@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_181206) do
+ActiveRecord::Schema.define(version: 2020_02_22_165127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,5 +34,14 @@ ActiveRecord::Schema.define(version: 2020_02_21_181206) do
     t.string "name"
   end
 
+  create_table "specialization_areas", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "area_id", null: false
+    t.index ["area_id"], name: "index_specialization_areas_on_area_id"
+  end
+
   add_foreign_key "areas", "disciplines"
+  add_foreign_key "specialization_areas", "areas"
 end

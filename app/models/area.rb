@@ -1,4 +1,7 @@
 class Area < ActiveRecord::Base
-  validates :name, :entity_id, presence: true
+  has_many :specialization_areas
   belongs_to :discipline
+
+  validates :name, :entity_id, presence: true
+  validates_associated :discipline, :specialization_areas
 end
