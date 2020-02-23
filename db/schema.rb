@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_172049) do
+ActiveRecord::Schema.define(version: 2020_02_22_202051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_172049) do
   create_table "announcements", force: :cascade do |t|
     t.string "name"
     t.string "entity_id"
-    t.string "announcement_date"
+    t.datetime "announcement_date"
+  end
+
+  create_table "announcements_researchers", id: false, force: :cascade do |t|
+    t.bigint "researcher_id"
+    t.bigint "announcement_id"
+    t.index ["announcement_id"], name: "index_announcements_researchers_on_announcement_id"
+    t.index ["researcher_id"], name: "index_announcements_researchers_on_researcher_id"
   end
 
   create_table "areas", force: :cascade do |t|
