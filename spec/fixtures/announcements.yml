@@ -1,6 +1,6 @@
 convocatoria_colciencias:
   entity_id: 'CC1'
-  announcement_date: DateTime.now
+  announcement_date: <%= DateTime.now %>
   name: 'Convocatoria Colombia genetica 2020'
 
 convocatoria_cultura:

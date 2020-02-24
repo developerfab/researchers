@@ -12,7 +12,17 @@ class API::V1::AnnouncementsController < ApplicationController
     end
   end
 
+  def show
+    render json: find_announcement.to_json
+  rescue ActiveRecord::RecordNotFound => exception
+    render json: { error: exception }
+  end
+
   private
+
+  def find_announcement
+    Announcement.find(params[:id])
+  end
 
   def permited_params
     params.permit(:name, :entity_id, :announcement_date)

@@ -52,4 +52,27 @@ RSpec.describe API::V1::AnnouncementsController, type: :request do
       end
     end
   end
+
+  describe 'GET#show' do
+    context 'when the announcement exist' do
+      let(:convocatoria_colciencias){ announcements(:convocatoria_colciencias) }
+      let(:expected_response){ JSON.parse(convocatoria_colciencias.to_json) }
+
+      before { get api_v1_announcement_path(id: convocatoria_colciencias.id) }
+
+      it 'returns the announcement selected' do
+        expect(response_body).to eq(expected_response)
+      end
+    end
+
+    context "when the announcement doesn't exist" do
+      let(:expected_response){ { "error"=>"Couldn't find Announcement with 'id'=INVALID_ID" } }
+
+      before { get api_v1_announcement_path(id: 'INVALID_ID') }
+
+      it 'returns the announcement message error' do
+        expect(response_body).to eq(expected_response)
+      end
+    end
+  end
 end
