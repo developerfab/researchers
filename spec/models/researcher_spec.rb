@@ -6,4 +6,5 @@ RSpec.describe Researcher, type: :model do
   it { is_expected.to validate_presence_of(:gender) }
   it { is_expected.to validate_presence_of(:id_gender_entity) }
   it { is_expected.to have_and_belong_to_many(:announcements) }
+  it { is_expected.to have_one(:education) }
 end
